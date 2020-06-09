@@ -1,0 +1,30 @@
+﻿
+
+@model List<CarDealership.Models.Cars>
+<h1>Cars matching your search!</h1>
+<br><br>
+
+<table style="width:100%">
+  <thead>
+    <tr>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Color</th>
+    </tr>
+  </thead>
+    <tbody>
+    
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@car.Make</td>
+                <td>@car.Model</td>
+                <td>@car.Year</td>
+                <td>@car.Color</td>
+
+            </tr>
+        }
+
+        </tbody>
+</table>
