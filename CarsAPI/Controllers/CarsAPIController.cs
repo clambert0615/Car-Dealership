@@ -29,7 +29,7 @@ namespace CarsAPI.Controllers
         public async Task<ActionResult<Cars>> GetCar(int id)
         {
             var car = await _context.Cars.FindAsync(id);
-            if(car == null)
+            if (car == null)
             {
                 return NotFound();
             }
@@ -75,7 +75,7 @@ namespace CarsAPI.Controllers
         public async Task<ActionResult<List<Cars>>> GetCarsbyCombination(string make, string model, int year, string color)
         {
             List<Cars> cars = await _context.Cars.ToListAsync();
-            if(make != "any")
+            if (make != "any")
             {
                 cars = cars.Where(x => x.Make.ToLower() == make.ToLower()).ToList();
             }
@@ -99,7 +99,7 @@ namespace CarsAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Cars>> AddCar(Cars newCar)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _context.Cars.Add(newCar);
                 await _context.SaveChangesAsync();
@@ -110,13 +110,13 @@ namespace CarsAPI.Controllers
             {
                 return BadRequest();
             }
-       
+
         }
         //Update api/cars/{id}
-        [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateCar(int id, Cars updatedCar)
+        [HttpPut]
+        public async Task<ActionResult> UpdateCar(Cars updatedCar)
         {
-            if(id != updatedCar.Id || !ModelState.IsValid)
+            if(!ModelState.IsValid)
             {
                 return BadRequest();
             }

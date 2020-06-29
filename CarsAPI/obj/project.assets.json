@@ -5007,11 +5007,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Grandcircus\\CarsAPI\\CarsAPI\\CarsAPI.csproj",
+      "projectUniqueName": "C:\\Grandcircus\\CarDealership\\CarsAPI\\CarsAPI.csproj",
       "projectName": "CarsAPI",
-      "projectPath": "C:\\Grandcircus\\CarsAPI\\CarsAPI\\CarsAPI.csproj",
+      "projectPath": "C:\\Grandcircus\\CarDealership\\CarsAPI\\CarsAPI.csproj",
       "packagesPath": "C:\\Users\\cbele\\.nuget\\packages\\",
-      "outputPath": "C:\\Grandcircus\\CarsAPI\\CarsAPI\\obj\\",
+      "outputPath": "C:\\Grandcircus\\CarDealership\\CarsAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
