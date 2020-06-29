@@ -1,20 +1,36 @@
 ﻿
 
 @model List<CarDealership.Models.Cars>
-<h1>Cars matching your search!</h1>
-<br><br>
+<h1 style="text-align:center; color:crimson;">Cars matching your search!</h1>
+<br>
+<br>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-<table style="width:100%">
-  <thead>
-    <tr>
-        <th>Make</th>
-        <th>Model</th>
-        <th>Year</th>
-        <th>Color</th>
-    </tr>
-  </thead>
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: silver;
+    }
+</style>
+<table id="carTable" style="width:100%">
+    <thead>
+
+        <tr>
+            <th onclick="sortTable(0)" style="cursor:pointer">Make</th>
+            <th onclick="sortTable(1)" style="cursor:pointer">Model</th>
+            <th onclick="sortTable(2)" style="cursor:pointer">Year</th>
+            <th onclick="sortTable(3)" style="cursor:pointer">Color</th>
+        </tr>
+    </thead>
     <tbody>
-    
+
         @foreach (var car in Model)
         {
             <tr>
@@ -22,9 +38,62 @@
                 <td>@car.Model</td>
                 <td>@car.Year</td>
                 <td>@car.Color</td>
+                <td>
+                    <button style="background-color:cornflowerblue;" onclick="document.location = '/Car/UpdateCar?id=@car.Id'"> Update car</button>
+                </td>
+                <td>
+                    <a href="/Car/DeleteCar?id=@car.Id" id="deleteBtn" class="btn bg-danger mr-1"
+                       onclick="return confirm('Are you sure you want to remove this car?');">
+                        <i class="fas fa-trash-alt text-white"></i>Remove Car
+                    </a>
+
+                </td>
 
             </tr>
         }
 
-        </tbody>
+    </tbody>
 </table>
+<br />
+<button style="background-color:crimson;" onclick="document.location = '/Car/SearchIndex'">Back to Home</button>
+
+
+<script>
+    function sortTable(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("carTable");
+        switching = true;
+        dir = "asc";
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount++;
+            } else {
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    }
+</script>

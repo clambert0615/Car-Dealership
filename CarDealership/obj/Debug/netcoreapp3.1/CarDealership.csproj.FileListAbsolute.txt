@@ -90,3 +90,5 @@ C:\Grandcircus\CarDealership\CarDealership\obj\Debug\netcoreapp3.1\CarDealership
 C:\Grandcircus\CarDealership\CarDealership\obj\Debug\netcoreapp3.1\CarDealership.dll
 C:\Grandcircus\CarDealership\CarDealership\obj\Debug\netcoreapp3.1\CarDealership.pdb
 C:\Grandcircus\CarDealership\CarDealership\obj\Debug\netcoreapp3.1\CarDealership.genruntimeconfig.cache
+C:\Grandcircus\CarDealership\CarDealership\obj\Debug\netcoreapp3.1\Razor\Views\Car\AddCarInfo.cshtml.g.cs
+C:\Grandcircus\CarDealership\CarDealership\obj\Debug\netcoreapp3.1\Razor\Views\Car\UpdateCar.cshtml.g.cs

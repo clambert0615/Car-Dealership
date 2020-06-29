@@ -1,18 +1,35 @@
-﻿<h1>Welcome to the Grand Circuls Car Dealership!</h1>
+﻿<style>
+        div.absolute {
+            position: absolute;
+            top: 200px;
+            right: 200px;
+            width: 900px;
+            height: 450px;
+
+        }
+</style>
+<h1 style="text-align:center;">Welcome to the <span style="color:crimson">Grand Circus Car Dealership! </span></h1>
 <br>
 <h3>Search cars by Make, Model, Year, Color, or any combination!</h3>
 <br>
-
+<div class="absolute">
+    <img src="~/images/car.jpg" width="900" height="450">
+</div>
 <form action="/Car/SearchForCars" method="post">
-    Make:  <br>
+    <b>Make:</b><br>
     <input type="text" name="Make" /><br><br>
-    Model: <br>
+    <b>Model:</b><br>
     <input type="text" name="Model" /><br><br>
-    Year:  <br>
+    <b>Year:</b><br>
     <input type="number" name="Year" /><br><br>
-    Color: <br>
+    <b>Color:</b><br>
     <input type="text" name="Color" /><br><br>
-    <input type="submit" name="submit" value="Search" />
+    <input type="submit" name="submit" value="Search" style="background-color: coral" />
 
 </form>
+<br>
+<h3> Or </h3>
+<br>
+<button style="background-color:mediumspringgreen;" onclick="document.location = '/Car/AddCArInfo'"> Add a new car to inventory</button>
+
 

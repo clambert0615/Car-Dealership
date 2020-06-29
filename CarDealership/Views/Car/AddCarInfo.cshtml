@@ -1,0 +1,32 @@
+﻿<style>
+    div.absolute {
+        position: absolute;
+        top: 200px;
+        right: 200px;
+        width: 900px;
+        height: 450px;
+    }
+</style>
+
+<h1 style="text-align:center">Add a new car</h1>
+
+<div class="absolute">
+    <img src="~/images/yellowcar.jpg" width="900" height="450">
+</div>
+
+<form action="/Car/AddNewCar" method="post">
+    <b>Make:</b><br>
+    <input type="text" name="Make" /><br><br>
+    <b>Model:</b><br>
+    <input type="text" name="Model" /><br><br>
+    <b>Year:</b><br>
+    <input type="number" name="Year" /><br><br>
+    <b>Color:</b><br>
+    <input type="text" name="Color" /><br><br>
+    <input type="submit" name="submit" value="Add New Car" style="background-color:mediumspringgreen;" />
+
+</form>
+<br>
+<h3> Or </h3>
+<br>
+<button style="background-color:crimson;" onclick="document.location = '/Car/SearchIndex'">Back to Home</button>

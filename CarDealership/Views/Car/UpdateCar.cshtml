@@ -1,0 +1,34 @@
+﻿<style>
+    div.absolute {
+        position: absolute;
+        top: 150px;
+        right: 200px;
+        width: 900px;
+        height: 450px;
+    }
+</style>
+
+
+@model Cars
+<h1 style="text-align:center; color:cornflowerblue;">Update Car Form</h1>
+
+<div class="absolute">
+    <img src="~/images/bluecar.jpg" width="900" height="450">
+</div>
+<form action="/Car/UpdateCar" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    Make:  <br>
+    <input type="text" name="Make" value="@Model.Make" /><br><br>
+    Model: <br>
+    <input type="text" name="Model" value="@Model.Model" /><br><br>
+    Year:  <br>
+    <input type="number" name="Year" value="@Model.Year" /><br><br>
+    Color: <br>
+    <input type="text" name="Color" value="@Model.Color" /><br><br>
+    <input type="submit" name="submit" value="Update this car" style="background-color:cornflowerblue;" />
+
+</form>
+<br>
+<h3> Or </h3>
+<br>
+<button style="background-color:crimson;" onclick="document.location = '/Car/SearchIndex'">Back to Home</button>
